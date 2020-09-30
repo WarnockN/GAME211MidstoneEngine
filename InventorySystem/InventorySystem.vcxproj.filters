@@ -30,6 +30,9 @@
     <ClInclude Include="..\..\..\Users\Noah\Desktop\ComponentFramework19.1.1\ComponentFramework19.1.1\SDL_Project\VMath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Body.cpp">
@@ -39,6 +42,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Users\Noah\Desktop\ComponentFramework19.1.1\ComponentFramework19.1.1\SDL_Project\VMath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -144,11 +144,13 @@
     <ClInclude Include="..\..\..\Users\Noah\Desktop\ComponentFramework19.1.1\ComponentFramework19.1.1\SDL_Project\Vector.h" />
     <ClInclude Include="..\..\..\Users\Noah\Desktop\ComponentFramework19.1.1\ComponentFramework19.1.1\SDL_Project\VMath.h" />
     <ClInclude Include="Body.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Users\Noah\Desktop\ComponentFramework19.1.1\ComponentFramework19.1.1\SDL_Project\MMath.cpp" />
     <ClCompile Include="..\..\..\Users\Noah\Desktop\ComponentFramework19.1.1\ComponentFramework19.1.1\SDL_Project\VMath.cpp" />
     <ClCompile Include="Body.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
