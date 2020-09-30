@@ -147,6 +147,7 @@
     <ClInclude Include="..\..\..\Users\Noah\Desktop\ComponentFramework19.1.1\ComponentFramework19.1.1\SDL_Project\Vector.h" />
     <ClInclude Include="..\..\..\Users\Noah\Desktop\ComponentFramework19.1.1\ComponentFramework19.1.1\SDL_Project\VMath.h" />
     <ClInclude Include="Body.h" />
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
@@ -160,6 +161,7 @@
     <ClCompile Include="..\..\..\Users\Noah\Desktop\ComponentFramework19.1.1\ComponentFramework19.1.1\SDL_Project\MMath.cpp" />
     <ClCompile Include="..\..\..\Users\Noah\Desktop\ComponentFramework19.1.1\ComponentFramework19.1.1\SDL_Project\VMath.cpp" />
     <ClCompile Include="Body.cpp" />
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
