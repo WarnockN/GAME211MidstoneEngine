@@ -1,10 +1,10 @@
 #include "PhysicsObject.h"
 
-PhysicsObject::PhysicsObject():pos(0.0f), vel(0.0f), accel(0.0f), mass(0.0f), angle(0.0f), angularVel(0.0f), angularAcc(0.0f), rotationalInertia(0.0f), nforce(0.0f), radius(0.0f), time(0.0f) {}
+PhysicsObject::PhysicsObject():pos(0.0f), vel(0.0f), accel(0.0f), mass(0.0f), angle(0.0f), angularVel(0.0f), angularAcc(0.0f), rotationalInertia(0.0f), radius(0.0f), time(0.0f) {}
 
 PhysicsObject::~PhysicsObject() {}
 
-PhysicsObject::PhysicsObject(Vec3 pos_, Vec3 vel_, Vec3 accel_, float mass_, float time_, float radius_) {
+PhysicsObject::PhysicsObject(Vec3 pos_, Vec3 vel_, Vec3 accel_, float mass_, float time_, float radius_):angle(0.0f), angularVel(0.0f), angularAcc(0.0f), rotationalInertia(0.0f) {
 	pos.x = pos_.x;
 	pos.y = pos_.y;
 	pos.z = pos_.z;
@@ -19,25 +19,12 @@ PhysicsObject::PhysicsObject(Vec3 pos_, Vec3 vel_, Vec3 accel_, float mass_, flo
 	radius = radius_;
 }
 
-PhysicsObject::PhysicsObject(float mass_, float rotationalInertia_) {
+PhysicsObject::PhysicsObject(float mass_, float rotationalInertia_):pos(0.0f), vel(0.0f), accel(0.0f), angle(0.0f), angularVel(0.0f), angularAcc(0.0f), radius(0.0f), time(0.0f) {
 	mass = mass_;
 	rotationalInertia = rotationalInertia_;
-	angle = 0.0f;
-	angularVel = 0.0f;
-	angularAcc = 0.0f;
-	pos.x = 0.0f;
-	pos.y = 0.0f;
-	pos.z = 0.0f;
-	vel.x = 0.0f;
-	vel.y = 0.0f;
-	vel.z = 0.0f;
-	accel.x = 0.0f;
-	accel.y = 0.0f;
-	accel.z = 0.0f;
 }
 
 void PhysicsObject::Update(const float deltaTime) {
-
 	pos.x += vel.x * deltaTime + 0.5f * accel.x * deltaTime * deltaTime;
 	vel.x += accel.x * deltaTime;
 	pos.y += vel.y * deltaTime + 0.5f * accel.y * deltaTime * deltaTime;
