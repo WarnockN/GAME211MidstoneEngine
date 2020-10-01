@@ -29,6 +29,5 @@ namespace  MATH {
 		static Matrix4 transpose(const Matrix4 &m);
 		static Matrix4 inverse(const Matrix4 &m);
 	};
-
 }
 #endif
