@@ -13,11 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Math">
-      <UniqueIdentifier>{53bbbc71-c1a9-432c-a8dc-33bceb00a312}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Math">
-      <UniqueIdentifier>{3576a32c-6490-43a6-8757-ea61d9006f7b}</UniqueIdentifier>
+      <UniqueIdentifier>{76fe85a5-944a-4615-9fbe-36d2b8dd5094}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{8cb95b3b-bb33-433e-b317-929122baf8ed}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,10 +57,10 @@
     <ClInclude Include="MMath.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
-    <ClInclude Include="VMath.h">
+    <ClInclude Include="Vector.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Vector.h">
+    <ClInclude Include="VMath.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
   </ItemGroup>
@@ -95,10 +95,10 @@
     <ClCompile Include="Collider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VMath.cpp">
+    <ClCompile Include="MMath.cpp">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
-    <ClCompile Include="MMath.cpp">
+    <ClCompile Include="VMath.cpp">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
   </ItemGroup>
