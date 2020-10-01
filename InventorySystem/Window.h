@@ -1,3 +1,5 @@
+#ifndef WINDOW_H
+#define WINDOW_H
 
 class Window {
 private:
@@ -12,4 +14,4 @@ public:
 	void OnDestroy();
 	SDL_Window* GetSDL_Window();
 };
-
+#endif

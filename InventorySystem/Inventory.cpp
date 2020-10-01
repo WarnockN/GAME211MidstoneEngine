@@ -2,15 +2,13 @@
 
 using namespace std;
 
-Inventory::Inventory()
-{
+Inventory::Inventory() {
 	this->capacity = 3; // # of items a player can hold
 	this->numOfItems = 0; //player starts with 0 items
 	this->itemArr = new Item * [capacity];
 }
 
-Inventory::~Inventory()
-{
+Inventory::~Inventory() {
 	for (size_t i = 0; i < this->numOfItems; i++)
 	{
 		this->itemArr[i];
@@ -19,8 +17,7 @@ Inventory::~Inventory()
 
 }
 
-void Inventory::addItem(const Item& item)
-{
+void Inventory::addItem(const Item& item) {
 	if (this->numOfItems >= this->capacity)
 	{
 		expand();
@@ -29,12 +26,10 @@ void Inventory::addItem(const Item& item)
 	this->itemArr[this->numOfItems] = new Item(item);
 }
 
-void Inventory::removeItem(int index)
-{
+void Inventory::removeItem(int index) {
 }
 
-void Inventory::expand() 
-{
+void Inventory::expand() {
 	this->capacity *= 2;
 
 	Item** tempArr = new Item * [this->capacity];
@@ -57,8 +52,7 @@ void Inventory::expand()
 	this->initialize(this->numOfItems);
 }
 
-void Inventory::initialize(const int from)
-{
+void Inventory::initialize(const int from) {
 	for (size_t i = from; i < capacity; i++)
 	{
 		itemArr[i] = nullptr;

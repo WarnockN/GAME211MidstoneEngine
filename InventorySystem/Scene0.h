@@ -1,6 +1,5 @@
 #ifndef SCENE0_H
 #define SCENE0_H
-
 #include "MMath.h"
 #include "Scene.h"
 #include <SDL.h>

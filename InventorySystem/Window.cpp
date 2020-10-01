@@ -2,7 +2,6 @@
 #include <SDL.h>
 #include <iostream> /// Umer likes this over printf() - too bad
 
-
 Window::Window(int width_, int height_){
 	screenSurface = nullptr;
 	window = nullptr;

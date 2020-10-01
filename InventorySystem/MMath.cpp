@@ -1,8 +1,6 @@
 #include "VMath.h"
 #include "MMath.h"
 using namespace MATH;
-
-
 ///Tested Feb 2 2013 SSF
 
  Matrix4 MMath::rotate(float degrees_, float x_, float y_, float z_){

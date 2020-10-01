@@ -1,7 +1,6 @@
 #ifndef BODY_H
 #define BODY_H
 #include "Vector.h"
-//#include <SDL.h>
 
 using namespace MATH;
 
@@ -21,7 +20,6 @@ public:
 	float angularVel;
 	float angularAcc;
 
-
 	Body();
 	~Body();
 	Body(Vec3 pos_, Vec3 vel, Vec3 accel_, float mass_, float time_, float radius_);
@@ -33,5 +31,4 @@ public:
 	Vec3 GetVel();
 	void SetVel(float number_);
 };
-
 #endif

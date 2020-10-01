@@ -2,7 +2,6 @@
 #include "VMath.h"
 #include <iostream>
 
-
 bool Collider::SphereSphereCollision(const Body& ball1, const Body& ball2) {
 	//basic stuff -- check if distance between the two spheres is less than radius + radius of two spheres
 	Vec3 center1 = ball1.pos;

@@ -1,8 +1,6 @@
 #include <SDL.h>
 #include "Timer.h"
 
-
-
 Timer::Timer() {
 	prevTicks= 0;
 	currTicks = 0;

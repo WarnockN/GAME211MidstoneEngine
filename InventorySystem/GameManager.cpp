@@ -4,13 +4,11 @@
 #include "Scene0.h"
 #include <iostream>
 
-
 GameManager::GameManager() {
 	timer = nullptr;
 	isRunning = true;
 	currentScene = nullptr;
 }
-
 /// In this OnCreate() method, fuction, subroutine, whatever the word, 
 bool GameManager::OnCreate() {
 	const int SCREEN_WIDTH = 780;
@@ -44,7 +42,6 @@ bool GameManager::OnCreate() {
 
 	return true;
 }
-
 	//Deconstructor
 	GameManager::~GameManager()
 {}

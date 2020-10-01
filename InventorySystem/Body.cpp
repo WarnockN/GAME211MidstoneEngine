@@ -1,7 +1,6 @@
 #include "Body.h"
 
-Body::Body()
-{
+Body::Body() {
 	pos.x = 0.0f;
 	pos.y = 0.0f;
 	pos.z = 0.0f;
@@ -22,16 +21,13 @@ Body::Body()
 	angle = 0.0f;
 	angularVel = 0.0f;
 	angularAcc = 0.0f;
+}
+
+Body::~Body() {
 
 }
 
-Body::~Body()
-{
-
-}
-
-Body::Body(Vec3 pos_, Vec3 vel_, Vec3 accel_, float mass_, float time_, float radius_)
-{
+Body::Body(Vec3 pos_, Vec3 vel_, Vec3 accel_, float mass_, float time_, float radius_) {
 	pos.x = pos_.x;
 	pos.y = pos_.y;
 	pos.z = pos_.z;
@@ -69,8 +65,7 @@ Body::Body(float mass_, float rotationalInertia_) {
 	accel.z = 0.0f;
 }
 
-void Body::ApplyForce(Vec3 force)
-{
+void Body::ApplyForce(Vec3 force) {
 	//Update orientation angle
 
 	//Update angular vel, pos, and accel
@@ -87,18 +82,15 @@ void Body::ApplyTorque(float torque) {
 
 }
 
-Vec3 Body::GetPos()
-{
+Vec3 Body::GetPos() {
 	return pos;
 }
 
-Vec3 Body::GetVel()
-{
+Vec3 Body::GetVel() {
 	return vel;
 }
 
-void Body::SetVel(float number_)
-{
+void Body::SetVel(float number_) {
 	vel.x = number_;
 }
 

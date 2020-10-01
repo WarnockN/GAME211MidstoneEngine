@@ -1,3 +1,5 @@
+#ifndef COLLIDER_H
+#define COLLIDER_H
 #include "Body.h"
 
 class Collider {
@@ -10,4 +12,4 @@ public:
 	Vec3 radius1;
 	Vec3 radius2;
 };
-
+#endif
