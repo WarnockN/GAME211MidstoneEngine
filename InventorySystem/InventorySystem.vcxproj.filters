@@ -16,7 +16,7 @@
     <Filter Include="Source Files\Math">
       <UniqueIdentifier>{53bbbc71-c1a9-432c-a8dc-33bceb00a312}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Math\Math">
+    <Filter Include="Header Files\Math">
       <UniqueIdentifier>{3576a32c-6490-43a6-8757-ea61d9006f7b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -52,16 +52,16 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Matrix.h">
-      <Filter>Source Files\Math\Math</Filter>
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="MMath.h">
-      <Filter>Source Files\Math\Math</Filter>
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="VMath.h">
-      <Filter>Source Files\Math\Math</Filter>
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="Vector.h">
-      <Filter>Source Files\Math\Math</Filter>
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
