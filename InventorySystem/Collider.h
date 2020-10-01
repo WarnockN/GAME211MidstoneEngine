@@ -1,13 +1,13 @@
 #ifndef COLLIDER_H
 #define COLLIDER_H
-#include "Body.h"
+#include "PhysicsObject.h"
 
 class Collider {
 public:
-	static bool SphereSphereCollision(const Body &ball1, const Body &ball2);
-	static void SphereSphereCollisionResponse(Body& ball1, Body& ball2);
-	static bool SpherePlaneCollision(const Body& ball, const Plane& plane);
-	static void SpherePlaneCollisionResponse(Body& ball, const Plane& plane);
+	static bool SphereSphereCollision(const PhysicsObject &ball1, const PhysicsObject &ball2);
+	static void SphereSphereCollisionResponse(PhysicsObject& ball1, PhysicsObject& ball2);
+	static bool SpherePlaneCollision(const PhysicsObject& ball, const Plane& plane);
+	static void SpherePlaneCollisionResponse(PhysicsObject& ball, const Plane& plane);
 
 	Vec3 radius1;
 	Vec3 radius2;

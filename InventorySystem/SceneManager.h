@@ -1,9 +1,9 @@
-#ifndef GAMEMANAGER_H
-#define GAMEMANAGER_H
+#ifndef SCENEMANAGER_H
+#define SCENEMANAGER_H
 #include <SDL.h>
 #include "Scene.h"
 
-class GameManager {
+class SceneManager {
 private:
 	/* These are called "forward declarations" The idea is that a pointer is 
 	really just an unsigned int, so to create a pointer to it you really only
@@ -20,14 +20,11 @@ private:
 	Scene *currentScene;
 
 public:
-	GameManager();
-	~GameManager();
+	SceneManager();
+	~SceneManager();
 	bool OnCreate();
 	void OnDestroy();
 	void HandleEvents();
 	void Run();
-	
 };
 #endif
-
-

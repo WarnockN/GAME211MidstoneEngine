@@ -145,9 +145,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Body.h" />
+    <ClInclude Include="PhysicsObject.h" />
     <ClInclude Include="Collider.h" />
-    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Matrix.h" />
@@ -161,9 +161,9 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Body.cpp" />
+    <ClCompile Include="PhysicsObject.cpp" />
     <ClCompile Include="Collider.cpp" />
-    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Main.cpp" />

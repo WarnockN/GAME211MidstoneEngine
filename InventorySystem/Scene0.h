@@ -3,7 +3,7 @@
 #include "MMath.h"
 #include "Scene.h"
 #include <SDL.h>
-#include "Body.h"
+#include "PhysicsObject.h"
 
 using namespace MATH;
 class Scene0 : public Scene {

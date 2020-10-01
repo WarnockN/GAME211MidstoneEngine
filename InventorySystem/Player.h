@@ -1,8 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include "Body.h"
+#include "PhysicsObject.h"
 
-class Player : public Body {
+class Player : public PhysicsObject {
 
 
 };

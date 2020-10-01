@@ -2,7 +2,7 @@
 #include "VMath.h"
 #include <iostream>
 
-bool Collider::SphereSphereCollision(const Body& ball1, const Body& ball2) {
+bool Collider::SphereSphereCollision(const PhysicsObject& ball1, const PhysicsObject& ball2) {
 	//basic stuff -- check if distance between the two spheres is less than radius + radius of two spheres
 	Vec3 center1 = ball1.pos;
 	Vec3 center2 = ball2.pos;
@@ -17,7 +17,7 @@ bool Collider::SphereSphereCollision(const Body& ball1, const Body& ball2) {
 	return false;
 }
 
-void Collider::SphereSphereCollisionResponse(Body& ball1, Body& ball2) {
+void Collider::SphereSphereCollisionResponse(PhysicsObject& ball1, PhysicsObject& ball2) {
 	float e = 1.0f; //Coefficient of Restitution
 
 	//get position vector between the two spheres and normalize
@@ -38,14 +38,14 @@ void Collider::SphereSphereCollisionResponse(Body& ball1, Body& ball2) {
 	ball2.vel += (newv2p - v2p) * normalizedLineOfAction;
 }
 
-bool Collider::SpherePlaneCollision(const Body& ball, const Plane& plane) {
+bool Collider::SpherePlaneCollision(const PhysicsObject& ball, const Plane& plane) {
 	if (VMath::distance(ball.pos, plane) < (ball.radius)) {
 		return true;
 	}
 	return false;
 }
 
-void Collider::SpherePlaneCollisionResponse(Body& ball, const Plane& plane) {
+void Collider::SpherePlaneCollisionResponse(PhysicsObject& ball, const Plane& plane) {
 	if (VMath::dot(ball.vel, plane) >= 0.0f) {
 		return;
 	}

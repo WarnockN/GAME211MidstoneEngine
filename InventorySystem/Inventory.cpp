@@ -9,20 +9,16 @@ Inventory::Inventory() {
 }
 
 Inventory::~Inventory() {
-	for (size_t i = 0; i < this->numOfItems; i++)
-	{
+	for (size_t i = 0; i < this->numOfItems; i++) {
 		this->itemArr[i];
 	}
 	delete[] itemArr;
-
 }
 
 void Inventory::addItem(const Item& item) {
-	if (this->numOfItems >= this->capacity)
-	{
+	if (this->numOfItems >= this->capacity) {
 		expand();
 	}
-
 	this->itemArr[this->numOfItems] = new Item(item);
 }
 
@@ -34,28 +30,22 @@ void Inventory::expand() {
 
 	Item** tempArr = new Item * [this->capacity];
 
-	for (size_t i = 0; i < this->numOfItems; i++)
-	{
+	for (size_t i = 0; i < this->numOfItems; i++) {
 		tempArr[i] = new Item(*this->itemArr[i]);
 	}
 
-	for (size_t i = 0; i < this->numOfItems; i++)
-	{
+	for (size_t i = 0; i < this->numOfItems; i++) {
 		delete this->itemArr[i];
 	}
 	delete[] this->itemArr;
-
 	//permanent pointer is pointing to the new array
 	this->itemArr = tempArr;
-	
 	//initializes 
 	this->initialize(this->numOfItems);
 }
 
 void Inventory::initialize(const int from) {
-	for (size_t i = from; i < capacity; i++)
-	{
+	for (size_t i = from; i < capacity; i++) {
 		itemArr[i] = nullptr;
 	}
-	
 }

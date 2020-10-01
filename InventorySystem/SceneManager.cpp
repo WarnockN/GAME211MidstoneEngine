@@ -1,16 +1,16 @@
-#include "GameManager.h"
+#include "SceneManager.h"
 #include "Window.h"
 #include "Timer.h"
 #include "Scene0.h"
 #include <iostream>
 
-GameManager::GameManager() {
+SceneManager::SceneManager(): ptr(NULL) {
 	timer = nullptr;
 	isRunning = true;
 	currentScene = nullptr;
 }
 /// In this OnCreate() method, fuction, subroutine, whatever the word, 
-bool GameManager::OnCreate() {
+bool SceneManager::OnCreate() {
 	const int SCREEN_WIDTH = 780;
 	const int SCREEN_HEIGHT = 400;
 	ptr = new Window(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -42,19 +42,17 @@ bool GameManager::OnCreate() {
 
 	return true;
 }
-	//Deconstructor
-	GameManager::~GameManager()
-{}
+//Deconstructor
+SceneManager::~SceneManager() {}
 
-void GameManager::OnDestroy()
+void SceneManager::OnDestroy()
 {
 	if (ptr) delete ptr;
 	if (timer) delete timer;
 	if (currentScene) delete currentScene;
 }
-
 /// Here's the whole game
-	void GameManager::Run() {
+	void SceneManager::Run() {
 	timer->Start();
 	while (isRunning) {
 		timer->UpdateFrameTicks();
@@ -65,14 +63,13 @@ void GameManager::OnDestroy()
 	SDL_Delay(timer->GetSleepTime(60)); ///60 frames per sec
 	}
 }
-void GameManager::HandleEvents()
-{
 
+void SceneManager::HandleEvents()
+{
 	SDL_Event sdlEvent;
 	SDL_PollEvent(&sdlEvent);
 	if (sdlEvent.type == SDL_QUIT) {
 		isRunning = false;
 		return;
 	}
-
 }

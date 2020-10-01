@@ -1,7 +1,7 @@
 ﻿#include "Scene0.h"
 #include <SDL.h>
 #include <SDL_Image.h>
-#include "Body.h"
+#include "PhysicsObject.h"
 
 Scene0::Scene0(SDL_Window* sdlWindow_){
 	window = sdlWindow_;

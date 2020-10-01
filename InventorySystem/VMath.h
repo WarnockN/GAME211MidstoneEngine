@@ -23,22 +23,18 @@
 #include "Vector.h"
 
 namespace MATH {
-	
 	class VMath {
-
 	public:
 		/// Calculate the dot product between Vec3s a & b 
 		inline static float dot(const Vec3 &a, const Vec3 &b){
 			return(a.x * b.x + a.y * b.y + a.z * b.z);
 		}
-
 		/// Calulate the cross product
 		inline static const Vec3 cross(const Vec3 &a, const Vec3 &b){
 			return Vec3(a.y * b.z - a.z * b.y,
 						a.z * b.x - a.x * b.z,
 						a.x * b.y - a.y * b.x);
 		}
-
 		/// Return a normalized Vec3
 		inline static Vec3 normalize(const Vec3 &a){
 			float magnitude;
@@ -55,11 +51,9 @@ namespace MATH {
 			result.z = a.z / magnitude;
 			return result;
 		}
-		
 		inline static float mag(const Vec3 &a){
 			return(sqrt((a.x * a.x) + (a.y * a.y) + (a.z * a.z)));
 		}
-
 		///  Angle-Axis rotation
 		inline static Vec3 rotate(const Vec3 &n, float theta, const Vec3 &v){
 			return v * cos(theta) + VMath::dot(v,n) * n * (1.0f-cos(theta)) + VMath::cross(n,v) * sin(theta);
@@ -85,10 +79,6 @@ namespace MATH {
 
 		/// Get the distance between a sphere and a plane
 		static float distance(const Sphere &s, const Plane &p);
-
-		
 	};
-
 }
-
 #endif

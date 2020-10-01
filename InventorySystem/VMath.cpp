@@ -18,6 +18,10 @@ Vec3 VMath::reflect(const Vec3 &v, const Plane &p){
 	return result;
 }
 
+Vec3 MATH::VMath::reflect2(const Vec3& v, const Plane& p) {
+	return Vec3();
+}
+
 /***
 Vec3 VMath::reflect2(const Vec3 &v, const Plane &p){
 	Vec3 result;
