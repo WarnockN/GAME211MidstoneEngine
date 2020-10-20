@@ -6,6 +6,4 @@ public:
 	Item();
 	~Item();
 };
-
 #endif
-
