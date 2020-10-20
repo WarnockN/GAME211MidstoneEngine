@@ -8,14 +8,13 @@ class PhysicsObject {
 	friend class Collider;
 public:
 	Vec3 pos, vel, accel;
-	float mass, time, radius, rotationalInertia, angle, angularVel, angularAcc;
+	float mass, time, nforce, radius, rotationalInertia, angle, angularVel, angularAcc;
 
 	PhysicsObject();
 	~PhysicsObject();
 	PhysicsObject(Vec3 pos_, Vec3 vel, Vec3 accel_, float mass_, float time_, float radius_);
 	PhysicsObject(float mass_, float rotationalInertia_);
 	void Update(const float deltaTime);
-
 	inline void setPos(const Vec3& pos_) { pos = pos_; }
 	inline void setVel(const Vec3& vel_) { vel = vel_; }
 	inline void setAccel(const Vec3& accel_) { accel = accel_; }
