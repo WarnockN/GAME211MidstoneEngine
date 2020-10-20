@@ -146,6 +146,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ItemFood.h" />
+    <ClInclude Include="ItemMisc.h" />
+    <ClInclude Include="ItemWeapon.h" />
     <ClInclude Include="PhysicsObject.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="SceneManager.h" />
@@ -162,6 +165,9 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ItemFood.cpp" />
+    <ClCompile Include="ItemMisc.cpp" />
+    <ClCompile Include="ItemWeapon.cpp" />
     <ClCompile Include="PhysicsObject.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="SceneManager.cpp" />

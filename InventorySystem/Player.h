@@ -6,6 +6,4 @@ class Player : public PhysicsObject {
 
 
 };
-
 #endif
-
