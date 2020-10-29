@@ -4,12 +4,14 @@
 #include "Scene.h"
 #include <SDL.h>
 #include "PhysicsObject.h"
+#include "Player.h"
 
 using namespace MATH;
 class Scene0 : public Scene {
 private:
 	SDL_Window *window;
 	Matrix4 projection;
+	Player* player;
 	float timer;
 public:
 	Scene0(SDL_Window* sdlWindow);

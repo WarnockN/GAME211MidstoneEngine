@@ -68,6 +68,7 @@ void SceneManager::HandleEvents()
 {
 	SDL_Event sdlEvent;
 	SDL_PollEvent(&sdlEvent);
+
 	if (sdlEvent.type == SDL_QUIT) {
 		isRunning = false;
 		return;
