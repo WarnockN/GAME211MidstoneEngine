@@ -21,7 +21,7 @@ bool Scene0::OnCreate() {
 	player = new Player(Vec3(75.0, 35.0, 0.0), 
 						Vec3(0.0, 0.0, 0.0), 
 						Vec3(0.0, 0.0, 0.0));
-	playerImage = IMG_Load("gingy.jpg");
+	playerImage = IMG_Load("fortnite.png");
 	if (playerImage == nullptr) cout << "image lost" << endl;
 
 	return true;
@@ -30,6 +30,12 @@ bool Scene0::OnCreate() {
 void Scene0::OnDestroy() {
 	delete player;
 	player = nullptr;
+
+	delete inventory;
+	inventory = nullptr;
+
+	delete playerImage;
+	playerImage = nullptr;
 }
 
 void Scene0::HandleEvents(const SDL_Event& event) {
