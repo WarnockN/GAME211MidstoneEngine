@@ -3,7 +3,3 @@
 ItemFood::ItemFood() {
 
 }
-
-ItemFood::ItemFood() {
-
-}
