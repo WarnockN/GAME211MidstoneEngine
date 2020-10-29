@@ -3,3 +3,7 @@
 ItemFood::ItemFood() {
 
 }
+
+ItemFood::~ItemFood() {
+
+}
