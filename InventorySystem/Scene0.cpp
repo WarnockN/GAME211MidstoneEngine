@@ -27,7 +27,7 @@ void Scene0::OnDestroy() {
 }
 
 void Scene0::HandleEvents(const SDL_Event& event) {
-
+	
 }
 
 void Scene0::Update(const float time) {	

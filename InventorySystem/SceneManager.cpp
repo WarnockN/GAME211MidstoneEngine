@@ -52,7 +52,7 @@ void SceneManager::OnDestroy()
 	if (currentScene) delete currentScene;
 }
 /// Here's the whole game
-	void SceneManager::Run() {
+void SceneManager::Run() {
 	timer->Start();
 	while (isRunning) {
 		timer->UpdateFrameTicks();
@@ -64,13 +64,26 @@ void SceneManager::OnDestroy()
 	}
 }
 
-void SceneManager::HandleEvents()
-{
-	SDL_Event sdlEvent;
-	SDL_PollEvent(&sdlEvent);
+void SceneManager::HandleEvents() {
+	SDL_Event event;
+	SDL_PollEvent(&event);
 
-	if (sdlEvent.type == SDL_QUIT) {
+	if (event.type == SDL_QUIT) {
 		isRunning = false;
 		return;
 	}
+	
+	/*if (SDL_PollEvent(&event)) {
+		switch (event.type) {
+		case SDL_QUIT:
+			isRunning = false;
+			break;
+		case SDL_KEYDOWN:
+			switch (event.key.keysym.sym) {
+			case SDLK_ESCAPE:
+				isRunning = false;
+				break;
+			}
+		}
+	}*/
 }

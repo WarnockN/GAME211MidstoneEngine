@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include "PhysicsObject.h"
 #include "Player.h"
+#include "Inventory.h"
 
 using namespace MATH;
 class Scene0 : public Scene {
@@ -12,6 +13,7 @@ private:
 	SDL_Window *window;
 	Matrix4 projection;
 	Player* player;
+	Inventory* inventory;
 	float timer;
 public:
 	Scene0(SDL_Window* sdlWindow);

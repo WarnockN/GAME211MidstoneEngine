@@ -1,7 +1,6 @@
 #include <iostream>
 #include "SceneManager.h"
 #include "MMath.h"
-
 ///#include <SDL.h>
 using namespace MATH;
 

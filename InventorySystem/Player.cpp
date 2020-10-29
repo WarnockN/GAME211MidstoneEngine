@@ -2,6 +2,8 @@
 
 Player::Player() {
 	pos = (0, 0, 0);
+	accel = (0, 0, 0);
+	vel = (0, 0, 0);
 }
 
 Player::~Player(){
