@@ -10,6 +10,12 @@ Player::~Player(){
 
 }
 
+Player::Player(Vec3 pos_, Vec3 accel_, Vec3 vel_) {
+	pos = pos_;
+	accel = accel_;
+	vel = vel_;
+}
+
 void Player::PollEvents() {
 	SDL_Event event;
 

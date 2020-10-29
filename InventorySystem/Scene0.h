@@ -13,6 +13,7 @@ private:
 	SDL_Window *window;
 	Matrix4 projection;
 	Player* player;
+	SDL_Surface* playerImage;
 	Inventory* inventory;
 	float timer;
 public:

@@ -14,6 +14,8 @@ private:
 public:
 	Player();
 	~Player();
+
+	Player(Vec3 pos_, Vec3 accel_, Vec3 vel_);
 	void PollEvents();
 
 
