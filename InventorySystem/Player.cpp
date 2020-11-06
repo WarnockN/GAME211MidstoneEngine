@@ -24,19 +24,19 @@ void Player::PollEvents() {
 			switch (event.key.keysym.sym) {
 			case SDLK_w:
 				std::cout << "pressing w" << std::endl;
-				pos.y += 15;
+				pos.y += 5;
 				break;
 			case SDLK_a:
 				std::cout << "pressing a" << std::endl;
-				pos.x -= 15;
+				pos.x -= 5;
 				break;
 			case SDLK_s:
 				std::cout << "pressing s" << std::endl;
-				pos.y -= 15;
+				pos.y -= 5;
 				break;
 			case SDLK_d:
 				std::cout << "pressing d" << std::endl;
-				pos.x += 15;
+				pos.x += 5;
 				break;
 			default:
 				break;

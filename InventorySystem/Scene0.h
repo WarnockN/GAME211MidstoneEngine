@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include "PhysicsObject.h"
 #include "Player.h"
+#include "ItemFood.h"
 #include "Inventory.h"
 
 using namespace MATH;
@@ -13,6 +14,9 @@ private:
 	SDL_Window *window;
 	Matrix4 projection;
 	Player* player;
+	ItemFood* food;
+
+	SDL_Surface* foodImage;
 	SDL_Surface* playerImage;
 	Inventory* inventory;
 	float timer;
