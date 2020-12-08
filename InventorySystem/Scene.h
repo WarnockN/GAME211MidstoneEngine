@@ -1,7 +1,6 @@
 #ifndef SCENE_H
 #define SCENE_H
 #include <SDL.h>
-
 class Scene {
 public:
 	virtual bool OnCreate() = 0;
@@ -10,5 +9,4 @@ public:
 	virtual void Render() = 0;
 	virtual void HandleEvents(const SDL_Event& event) = 0;
 }; 
-
 #endif

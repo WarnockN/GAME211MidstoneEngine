@@ -1,6 +1,5 @@
 #ifndef TIMER_H
 #define TIMER_H
-
 class Timer {
 private:
 	unsigned int prevTicks;
@@ -8,7 +7,6 @@ private:
 public:
 	Timer();
 	~Timer();
-
 	void Start();
 	void UpdateFrameTicks();
 	float GetDeltaTime() const;

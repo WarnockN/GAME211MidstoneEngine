@@ -2,7 +2,6 @@
 #include "MMath.h"
 using namespace MATH;
 ///Tested Feb 2 2013 SSF
-
  Matrix4 MMath::rotate(float degrees_, float x_, float y_, float z_){
 	float cosang, sinang, cosm;
 	Vec3 rotAxis(x_,y_,z_);
@@ -11,9 +10,7 @@ using namespace MATH;
 	cosang = cos(degrees_);
 	sinang = sin(degrees_);
 	cosm = (1.0f - cosang);
-
 	Matrix4 m;
-
 	m[0] = (rotAxis.x * rotAxis.x * cosm) + cosang;
 	m[1] = (rotAxis.x * rotAxis.y * cosm) + (rotAxis.z * sinang);
 	m[2] = (rotAxis.x * rotAxis.z * cosm) - (rotAxis.y * sinang);
@@ -32,11 +29,9 @@ using namespace MATH;
 	m[15] = 1.0;
 	return m;
 }
-
 Matrix4 MMath::rotate(const float degrees_, const Vec3 &axis_) {
 	 return MMath::rotate(degrees_, axis_.x, axis_.y, axis_.z);
 }
-
 /// As derived in GAME331 
 Matrix4 MMath::perspective(const float fovy_, const float aspect_, const float zNear_, const float zFar_){
 	float cot = 1.0f / tan(fovy_* 0.5f * DEGREES_TO_RADIANS);
@@ -47,8 +42,6 @@ Matrix4 MMath::perspective(const float fovy_, const float aspect_, const float z
 			      0.0,        0.0,    (2.0f*zNear_*zFar_)/(zNear_-zFar_),   0.0);
 	return result;
 }
-
-
 /// This creates a transform from Normalized Device Coordinates (NDC) to 
 /// screen coordinates. OpenGL uses NDC as			 
 ///	              ------------------------------
@@ -100,9 +93,6 @@ Matrix4 MMath:: viewportNDC(int width_,int height_){
 
 	return m;
 }
-
-
-/// 
 Matrix4 MMath::orthographic(float xMin_, float xMax_, float yMin_, float yMax_, float zMin_, float zMax_){
 	Matrix4 m;
 	
@@ -120,7 +110,6 @@ Matrix4 MMath::orthographic(float xMin_, float xMax_, float yMin_, float yMax_, 
 	***/
 	return m;
 }
-
 /// The orthographic projection matrix is linear and affine but nothing else so there is has no inverse
 /// Therefore, it is labeled singular or non-invertable.
 /// I would still like to back transform from screen space to world space though
@@ -137,7 +126,6 @@ Matrix4 MMath::unOrtho(const Matrix4 & ortho){
 	m[15] = 1.0f;
 	return m;
 }
-
 /// At first glance, it might look like this matrix 
 /// is written left-handed or transposed, it has not. 
 /// Remember how memory is layed out. It is still column based.  
@@ -151,7 +139,6 @@ Matrix4 MMath::translate(float x_, float y_, float z_){
 Matrix4 MMath::translate(const Vec3 &translate_) {
 	return MMath::translate(translate_.x, translate_.y, translate_.z);
 }
-
 Matrix4 MMath::scale(float x_, float y_, float z_){
 	return Matrix4(x_,  0.0f, 0.0f, 0.0f,
 				  0.0f, y_ ,  0.0f, 0.0f,
@@ -161,7 +148,6 @@ Matrix4 MMath::scale(float x_, float y_, float z_){
 Matrix4 MMath::scale(const Vec3 &scale) {
 	return MMath::scale(scale.x, scale.y, scale.z);
 }
-
 ///Tested Feb 1 2013 SSF
 Matrix4 MMath::lookAt(float eyeX, float eyeY, float eyeZ,
 			float atX, float atY, float atZ,
@@ -177,34 +163,27 @@ Matrix4 MMath::lookAt(float eyeX, float eyeY, float eyeZ,
 	up = VMath::normalize(up);
 	Vec3 side = VMath::normalize( VMath::cross(forward,up));
 	up = VMath::cross(side,forward);
-
 	result[0] = side.x;
 	result[1] = side.y;
 	result[2] = side.z;
 	result[3] = 0.0;
-
 	result[4] = up.x;
 	result[5] = up.y;
 	result[6] = up.z;
 	result[7] = 0.0;
-
 	result[8]  = -forward.x;
 	result[9]  = -forward.y;
 	result[10] = -forward.z;
 	result[11] = 0.0;
-	
 	result[12] = -VMath::dot(side,eye);	
 	result[13] = -VMath::dot(up,eye);
 	result[14] =  VMath::dot(forward,eye);
 	result[15] = 1.0;
-
 	return result;
 }
-
 Matrix4 MMath::lookAt(const Vec3& eye, const Vec3& at,  const Vec3& up){
 	return lookAt(eye.x, eye.y, eye.z, at.x, at.y, at.z, up.x, up.y, up.z);
 }
-
 /// Take the transpose of a matrix, swap row with columns 
 /// Didn't check it - Thank you Rob Robson for the fix 
 /// Tested 2016
@@ -215,13 +194,11 @@ Matrix4 MMath::transpose(const Matrix4 &m){
 					   m[3], m[7], m[11],m[15]);
 
 }
-
 /// 2x2 inverse is easy, 3x3 is a pain, 4x4 no way, this is tough stuff
 /// Tested 2013
 Matrix4 MMath::inverse(const Matrix4 &m) {
 		Matrix4 inverseM;
 		float determinate;
-
 		inverseM[0] =  m[5] * m[10] * m[15] - m[5] * m[11] * m[14] - m[9] * m[6] * m[15] + m[9] * m[7] * m[14] + m[13] * m[6] * m[11] - m[13] * m[7] * m[10];
 		inverseM[1] = -m[1] * m[10] * m[15] + m[1] * m[11] * m[14] + m[9] * m[2] * m[15] - m[9] * m[3] * m[14] - m[13] * m[2] * m[11] + m[13] * m[3] * m[10];
 		inverseM[2] =  m[1] * m[6] * m[15] - m[1] * m[7] * m[14] - m[5] * m[2] * m[15] + m[5] * m[3] * m[14] + m[13] * m[2] * m[7] - m[13] * m[3] * m[6];
@@ -238,9 +215,7 @@ Matrix4 MMath::inverse(const Matrix4 &m) {
 		inverseM[13] =  m[0] * m[9] * m[14] - m[0] * m[10] * m[13] - m[8] * m[1] * m[14] + m[8] * m[2] * m[13] + m[12] * m[1] * m[10] - m[12] * m[2] * m[9];
 		inverseM[14] = -m[0] * m[5] * m[14] + m[0] * m[6] * m[13] + m[4] * m[1] * m[14] - m[4] * m[2] * m[13] - m[12] * m[1] * m[6] + m[12] * m[2] * m[5];
 		inverseM[15] =  m[0] * m[5] * m[10] - m[0] * m[6] * m[9] - m[4] * m[1] * m[10] + m[4] * m[2] * m[9] + m[8] * m[1] * m[6] - m[8] * m[2] * m[5];
-
 		determinate = m[0] * inverseM[0] + m[1] * inverseM[4] + m[2] * inverseM[8] + m[3] * inverseM[12];
-		
 #ifdef _DEBUG  /// If in debug mode let's worry about divide by zero or nearly zero!!! 
 		if ( fabs(determinate) < VERY_SMALL ) {
 			std::string errorMsg("Divide by nearly zero in MMath::inverse!");

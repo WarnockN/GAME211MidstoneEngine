@@ -2,20 +2,15 @@
 #define MMATH_H
 #include "Matrix.h"
 ///  A class devoted to graphics related Math - OpenGL style
-
 namespace  MATH {
-
 	class MMath {
 	public:
 		static Matrix4 rotate(const float degrees_, const float x_, const float y_, const float z_);
 		static Matrix4 rotate(const float degrees_, const Vec3 &axis_);
-
 		static Matrix4 translate(const float x_, const float y_ , const float z_);
 		static Matrix4 translate(const Vec3 &translate_);
-
 		static Matrix4 scale(const float x_, const float y_, const float z_);
 		static Matrix4 scale(const Vec3 &scale);
-
 		static Matrix4 perspective(const float fovy_, const float aspect_, const float zNear_, const float zFar_);
 		static Matrix4 viewportNDC(const int width_, const int height_);
 		static Matrix4 orthographic(const float xMin_, const float xMax_,

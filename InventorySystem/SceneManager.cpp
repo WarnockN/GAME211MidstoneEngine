@@ -3,7 +3,6 @@
 #include "Timer.h"
 #include "Scene0.h"
 #include <iostream>
-
 SceneManager::SceneManager(): ptr(NULL) {
 	timer = nullptr;
 	isRunning = true;
@@ -22,29 +21,24 @@ bool SceneManager::OnCreate() {
 		OnDestroy();
 		return false;
 	}
-
 	timer = new Timer();
 	if (timer == nullptr) {
 		OnDestroy();
 		return false;
 	}
-
 	currentScene = new Scene0(ptr->GetSDL_Window());
 	if (currentScene == nullptr) {
 		OnDestroy();
 		return false;
 	}
-
 	if (currentScene->OnCreate() == false) {
 		OnDestroy();
 		return false;
 	}
-
 	return true;
 }
 //Deconstructor
 SceneManager::~SceneManager() {}
-
 void SceneManager::OnDestroy()
 {
 	if (ptr) delete ptr;
@@ -58,21 +52,17 @@ void SceneManager::Run() {
 		timer->UpdateFrameTicks();
 		currentScene->Update(timer->GetDeltaTime());
 		currentScene->Render();
-
 /// Keeep the event loop running at a proper rate
 	SDL_Delay(timer->GetSleepTime(60)); ///60 frames per sec
 	}
 }
-
 void SceneManager::HandleEvents() {
 	SDL_Event event;
 	SDL_PollEvent(&event);
-
 	if (event.type == SDL_QUIT) {
 		isRunning = false;
 		return;
 	}
-	
 	/*if (SDL_PollEvent(&event)) {
 		switch (event.type) {
 		case SDL_QUIT:
