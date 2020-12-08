@@ -2,7 +2,6 @@
 #define SCENEMANAGER_H
 #include <SDL.h>
 #include "Scene.h"
-
 class SceneManager {
 private:
 	/* These are called "forward declarations" The idea is that a pointer is 
@@ -18,7 +17,6 @@ private:
 	class Timer *timer;
 	bool isRunning;
 	Scene *currentScene;
-
 public:
 	SceneManager();
 	~SceneManager();

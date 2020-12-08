@@ -7,7 +7,6 @@
 #include "Player.h"
 #include "ItemFood.h"
 #include "Inventory.h"
-
 using namespace MATH;
 class Scene0 : public Scene {
 private:
@@ -15,7 +14,6 @@ private:
 	Matrix4 projection;
 	Player* player;
 	ItemFood* food;
-
 	SDL_Surface* foodImage;
 	SDL_Surface* playerImage;
 	Inventory* inventory;
@@ -30,4 +28,3 @@ public:
 	void HandleEvents(const SDL_Event& event);
 };
 #endif
-

@@ -323,7 +323,6 @@ namespace  MATH {
 		me guess what the operator might mean. Use the idea of "Least Astonishment" don't surprise me,
 		or shock me or anything else that will piss me or others off-SSF
 		***/
-
 		/*** Note 2.
 		In straight C programming, lvalues and rvalues literially means left and right assignments.  For example, 
 		int x = 5; x is the lvalue and 5 is the rvalue. Easy. In C++ it get a bit more tricky. The modern idea is
@@ -336,7 +335,6 @@ namespace  MATH {
 		address the index as if it were an array. Then *(&x + index) dereferences that address back into the 
 		object, the float& reference returns it as an address and thus an lvalue.
 		***/
-
 		/*** Note 3.
 		The issue here is that I need to use functions in Vector from VMath which require Vector but VMath
 		also requires Vector - this is a classic circular dependency problem or sometimes known as mutual recursion.

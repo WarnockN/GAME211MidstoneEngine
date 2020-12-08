@@ -1,15 +1,12 @@
 #ifndef PHYSICSOBJECT_H
 #define PHYSICSOBJECT_H
 #include "Vector.h"
-
 using namespace MATH;
-
 class PhysicsObject {
 	friend class Collider;
 public:
 	Vec3 pos, vel, accel;
 	float mass, time, nforce, radius, rotationalInertia, angle, angularVel, angularAcc;
-
 	PhysicsObject();
 	~PhysicsObject();
 	PhysicsObject(Vec3 pos_, Vec3 vel, Vec3 accel_, float mass_, float time_, float radius_);

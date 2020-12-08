@@ -1,19 +1,13 @@
 #ifndef VMATH_H
 #define VMATH_H
-
 #include <math.h>
 #include <stdio.h>
-
 /// This is a library of Vec3 math routines. 
-
 /*d = sqrt(deltaXsqrd + (deltaYsqrd) + (deltaZsqrd))
   d < (radius1 + radius2) for spherical collision
-
   or
-
   d2 = deltaXsqrd + deltaYsqrd + deltaZsqrd
   d2 < (radius1 + radius2)(radius1 + radius2)
-
   1 2	2 3	 3 4  4 5  5 6
   1 3	2 4	 3 5  4 6
   1 4	2 5  3 6
@@ -21,7 +15,6 @@
   1 6 */
 /**/
 #include "Vector.h"
-
 namespace MATH {
 	class VMath {
 	public:
@@ -58,25 +51,19 @@ namespace MATH {
 		inline static Vec3 rotate(const Vec3 &n, float theta, const Vec3 &v){
 			return v * cos(theta) + VMath::dot(v,n) * n * (1.0f-cos(theta)) + VMath::cross(n,v) * sin(theta);
 		}
-
 		////////////////////////////////////////////////////////////////////////		
 		/// These are a little more complex so I won't inline them
 		////////////////////////////////////////////////////////////////////////
 		/// Reflect off a normal  
 		static Vec3 reflect(const Vec3 &v, const Vec3 &p);
-
 		/// Reflect a normalized direction Vec3 off a plane 
 		static Vec3 reflect(const Vec3 &v, const Plane &p);
-
 		/// Reflect a velocity Vec3 off a plane maintaining the original magnitude (velocity) 
 		static Vec3 reflect2(const Vec3 &v, const Plane &p);
-
 		/// Get the distance between two Vec3s 
 		static float distance(const Vec3 &a, const Vec3 &b);
-
 		/// Get the distance between a point (Vec3) and a plane 
 		static float distance(const Vec3 &v, const Plane &p);
-
 		/// Get the distance between a sphere and a plane
 		static float distance(const Sphere &s, const Plane &p);
 	};

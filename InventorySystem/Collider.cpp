@@ -1,7 +1,6 @@
 #include "Collider.h"
 #include "VMath.h"
 #include <iostream>
-
 bool Collider::SphereSphereCollision(const PhysicsObject& ball1, const PhysicsObject& ball2) {
 	//basic stuff -- check if distance between the two spheres is less than radius + radius of two spheres
 	Vec3 center1 = ball1.pos;
@@ -16,7 +15,6 @@ bool Collider::SphereSphereCollision(const PhysicsObject& ball1, const PhysicsOb
 	}
 	return false;
 }
-
 void Collider::SphereSphereCollisionResponse(PhysicsObject& ball1, PhysicsObject& ball2) {
 	float e = 1.0f; //Coefficient of Restitution
 
@@ -37,14 +35,12 @@ void Collider::SphereSphereCollisionResponse(PhysicsObject& ball1, PhysicsObject
 	ball1.vel += (newv1p - v1p) * normalizedLineOfAction;
 	ball2.vel += (newv2p - v2p) * normalizedLineOfAction;
 }
-
 bool Collider::SpherePlaneCollision(const PhysicsObject& ball, const Plane& plane) {
 	if (VMath::distance(ball.pos, plane) < (ball.radius)) {
 		return true;
 	}
 	return false;
 }
-
 void Collider::SpherePlaneCollisionResponse(PhysicsObject& ball, const Plane& plane) {
 	if (VMath::dot(ball.vel, plane) >= 0.0f) {
 		return;
@@ -58,14 +54,4 @@ void Collider::SpherePlaneCollisionResponse(PhysicsObject& ball, const Plane& pl
 
 	//make new velocity equal to reflection * magnitude to reflect and keep same speed with magnituide
 	ball.vel = reflection * magnitude;
-}
-
-bool Collider::PlayerItemCollision(const Player& box1, const SDL_Surface& box1Pic, const Item& box2, const SDL_Surface& box2Pic)
-{
-	//if ((box1.GetPos.x)<= (box2.GetPos.x) && (box1.GetPos.x + box1Pic.w) >= (box2.GetPos.x)) {
-
-	//	std::cout << "are we in between" << std::endl;
-
-	//}
-	return false;
 }
