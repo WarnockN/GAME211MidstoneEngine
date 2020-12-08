@@ -4,9 +4,7 @@
 class ItemMisc : public Item {
 public:
 	ItemMisc();
-	ItemMisc(Vec3 pos_);
+	ItemMisc(Vec3 pos_, float radius_);
 	~ItemMisc();
-	inline void SetPos(Vec3 pos_) { pos = pos_; }
-	inline Vec3 GetPos() { return pos; }
 };
 #endif
