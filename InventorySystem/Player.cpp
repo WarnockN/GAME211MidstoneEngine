@@ -1,9 +1,9 @@
 #include "Player.h"
 
 Player::Player() {
-	pos = (0, 0, 0);
-	accel = (0, 0, 0);
-	vel = (0, 0, 0);
+	pos = (0.0f, 0.0f, 0.0f);
+	accel = (0.0f, 0.0f, 0.0f);
+	vel = (0.0f, 0.0f, 0.0f);
 }
 
 Player::~Player(){
@@ -24,19 +24,19 @@ void Player::PollEvents() {
 			switch (event.key.keysym.sym) {
 			case SDLK_w:
 				std::cout << "pressing w" << std::endl;
-				pos.y += 5;
+				pos.y += 5.0f;
 				break;
 			case SDLK_a:
 				std::cout << "pressing a" << std::endl;
-				pos.x -= 5;
+				pos.x -= 5.0f;
 				break;
 			case SDLK_s:
 				std::cout << "pressing s" << std::endl;
-				pos.y -= 5;
+				pos.y -= 5.0f;
 				break;
 			case SDLK_d:
 				std::cout << "pressing d" << std::endl;
-				pos.x += 5;
+				pos.x += 5.0f;
 				break;
 			default:
 				break;

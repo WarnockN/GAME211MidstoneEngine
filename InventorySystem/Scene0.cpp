@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <SDL_Image.h>
 #include "PhysicsObject.h"
+#include "Collider.h"
 
 using namespace std;
 
@@ -55,6 +56,8 @@ void Scene0::HandleEvents(const SDL_Event& event) {
 }
 
 void Scene0::Update(const float time) {	
+
+	Collider::BoxBoxCollision(player);
 	player->PollEvents();
 }
 
@@ -79,7 +82,7 @@ void Scene0::Render() {
 	for (int j = 1; j < 2; j++) {
 
 
-		Vec3 ScreenPos = projection * player->GetPos();
+		Vec3 ScreenPos = projection * food->GetPos();
 
 		images[j].x = (int)ScreenPos.x;
 		images[j].y = (int)ScreenPos.y;

@@ -59,3 +59,13 @@ void Collider::SpherePlaneCollisionResponse(PhysicsObject& ball, const Plane& pl
 	//make new velocity equal to reflection * magnitude to reflect and keep same speed with magnituide
 	ball.vel = reflection * magnitude;
 }
+
+bool Collider::PlayerItemCollision(const Player& box1, const SDL_Surface& box1Pic, const Item& box2, const SDL_Surface& box2Pic)
+{
+	//if ((box1.GetPos.x)<= (box2.GetPos.x) && (box1.GetPos.x + box1Pic.w) >= (box2.GetPos.x)) {
+
+	//	std::cout << "are we in between" << std::endl;
+
+	//}
+	return false;
+}
