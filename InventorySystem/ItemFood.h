@@ -4,9 +4,7 @@
 class ItemFood : public Item {
 public:
 	ItemFood();
-	ItemFood(Vec3 pos_);
+	ItemFood(Vec3 pos_, float radius_);
 	~ItemFood();
-	inline void SetPos(Vec3 pos_) { pos = pos_; }
-	inline Vec3 GetPos() { return pos; }
 };
 #endif

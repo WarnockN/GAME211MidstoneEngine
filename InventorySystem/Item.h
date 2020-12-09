@@ -1,14 +1,10 @@
 #ifndef ITEM_H
 #define ITEM_H
 #include "PhysicsObject.h"
-class Item {
-protected:
-	Vec3 pos;
+class Item : public PhysicsObject {
 public:
 	Item();
-	Item(Vec3 pos_);
+	Item(Vec3 pos_, float radius_);
 	~Item();
-	inline void SetPos(Vec3 pos_) { pos = pos_; }
-	inline Vec3 GetPos() { return pos; }
 };
 #endif

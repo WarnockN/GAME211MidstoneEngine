@@ -4,9 +4,7 @@
 class ItemWeapon : public Item {
 public:
 	ItemWeapon();
-	ItemWeapon(Vec3 pos_);
+	ItemWeapon(Vec3 pos_, float radius_);
 	~ItemWeapon();
-	inline void SetPos(Vec3 pos_) { pos = pos_; }
-	inline Vec3 GetPos() { return pos; }
 };
 #endif
