@@ -9,5 +9,6 @@ public:
 	~Player();
 	Player(Vec3 pos_, Vec3 accel_, Vec3 vel_, float radius_);
 	void PollEvents();
+	void ShowInventory();
 };
 #endif

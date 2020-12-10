@@ -13,7 +13,7 @@ bool Scene0::OnCreate() {
 	int w, h;
 	SDL_GetWindowSize(window,&w,&h);
 	Matrix4 ndc = MMath::viewportNDC(w,h);
-	Matrix4 ortho = MMath::orthographic(0.0, 200.0, 0.0, 50.0, 0.0, 1.0);
+	Matrix4 ortho = MMath::orthographic(0.0, 400.0, 0.0, 200.0, 0.0, 1.0);
 	projection = ndc * ortho;
 	inventory = new Inventory();
 	food = new ItemFood(Vec3(150.0, 35.0, 0.0), 1.0f);

@@ -10,7 +10,7 @@ SceneManager::SceneManager(): ptr(NULL) {
 }
 /// In this OnCreate() method, fuction, subroutine, whatever the word, 
 bool SceneManager::OnCreate() {
-	const int SCREEN_WIDTH = 780;
+	const int SCREEN_WIDTH = 800;
 	const int SCREEN_HEIGHT = 400;
 	ptr = new Window(SCREEN_WIDTH, SCREEN_HEIGHT);
 	if (ptr == nullptr) {
