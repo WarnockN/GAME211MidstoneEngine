@@ -33,8 +33,7 @@ void Player::PollEvents() {
 				pos.x += 5;
 				break;
 			case SDLK_e:
-				//call open inventory show inventory image
-				ShowInventory();
+				openInventory = !openInventory;
 				//show items in inventory
 				std::cout << "Open inventory" << std::endl;
 				break;
@@ -45,8 +44,15 @@ void Player::PollEvents() {
 	}
 }
 
-void Player::ShowInventory()
+bool Player::ShowInventory()
 {
+	if (openInventory == true) {
+		return true;
+	}
+
+		return false;
+	
+
 	//show inventory ui
 	//redisplay collected items in thier respective locations
 }

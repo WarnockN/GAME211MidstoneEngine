@@ -14,10 +14,15 @@ private:
 	Matrix4 projection;
 	Player* player;
 	ItemFood* food;
+	Inventory* inventory;
+
+	SDL_Surface* inventoryImage;
 	SDL_Surface* foodImage;
 	SDL_Surface* playerImage;
-	Inventory* inventory;
+
+
 	float timer;
+	bool renderInventory = false;
 public:
 	Scene0(SDL_Window* sdlWindow);
 	~Scene0();

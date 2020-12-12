@@ -5,10 +5,11 @@
 #include <iostream>
 class Player : public PhysicsObject {
 public:
+	bool openInventory = false;
 	Player();
 	~Player();
 	Player(Vec3 pos_, Vec3 accel_, Vec3 vel_, float radius_);
 	void PollEvents();
-	void ShowInventory();
+	bool ShowInventory();
 };
 #endif
