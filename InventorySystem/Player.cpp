@@ -47,7 +47,8 @@ void Player::PollEvents() {
 			mouseIsAt = Vec3(float(event.button.x), float(event.button.y), 0.0f);
 			std::cout << "mouse location X: " << mouseIsAt.x << " Y: " << mouseIsAt.y << std::endl;
 		}
-		else if (mouseIsAt.x > 0 && mouseIsAt.x < 400 && mouseIsAt.y > 0 && mouseIsAt.y < 200 && openInventory == true) {
+		else if (mouseIsAt.x > 0 && mouseIsAt.x < 400 && 
+				 mouseIsAt.y > 0 && mouseIsAt.y < 200 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked" << std::endl;
 			}
@@ -55,7 +56,8 @@ void Player::PollEvents() {
 				std::cout << "right clicked" << std::endl;
 			}
 		}
-		else if (mouseIsAt.x > 400 && mouseIsAt.x < 800 && mouseIsAt.y > 200 && mouseIsAt.y < 400 && openInventory == true) {
+		else if (mouseIsAt.x > 400 && mouseIsAt.x < 800 && 
+				 mouseIsAt.y > 200 && mouseIsAt.y < 400 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked" << std::endl;
 			}
@@ -63,7 +65,8 @@ void Player::PollEvents() {
 				std::cout << "right clicked" << std::endl;
 			}
 		}
-		else if (mouseIsAt.x > 0 && mouseIsAt.x < 400 && mouseIsAt.y > 200 && mouseIsAt.y < 400 && openInventory == true) {
+		else if (mouseIsAt.x > 0 && mouseIsAt.x < 400 && 
+				 mouseIsAt.y > 200 && mouseIsAt.y < 400 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked" << std::endl;
 			}
@@ -71,7 +74,8 @@ void Player::PollEvents() {
 				std::cout << "right clicked" << std::endl;
 			}
 		}
-		else if (mouseIsAt.x > 400 && mouseIsAt.x < 800 && mouseIsAt.y > 0 && mouseIsAt.y < 200 && openInventory == true) {
+		else if (mouseIsAt.x > 400 && mouseIsAt.x < 800 && 
+				 mouseIsAt.y > 0 && mouseIsAt.y < 200 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked" << std::endl;
 			}
