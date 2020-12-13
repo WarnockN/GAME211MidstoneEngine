@@ -1,4 +1,10 @@
 #include "Item.h"
+void Item::Destroy(Item* item)
+{
+	delete item;
+	item = nullptr;
+
+}
 Item::Item(){
 
 }
