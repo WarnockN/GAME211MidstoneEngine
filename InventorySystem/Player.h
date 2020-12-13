@@ -6,6 +6,7 @@
 class Player : public PhysicsObject {
 private:
 	class Inventory *inventory;
+	Vec3 mouseIsAt;
 public:
 	bool openInventory = false;
 	Player();
