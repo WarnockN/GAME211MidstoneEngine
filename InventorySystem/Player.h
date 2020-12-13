@@ -4,6 +4,8 @@
 #include <SDL.h>
 #include <iostream>
 class Player : public PhysicsObject {
+private:
+	class Inventory *inventory;
 public:
 	bool openInventory = false;
 	Player();

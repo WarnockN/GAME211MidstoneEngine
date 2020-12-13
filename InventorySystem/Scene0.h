@@ -18,10 +18,9 @@ private:
 	
 	Inventory* inventory;
 
-	SDL_Surface* inventoryImage;
-	SDL_Surface* foodImage;
 	SDL_Surface* playerImage;
-
+	SDL_Surface* foodImage;
+	SDL_Surface* weaponImage;
 
 	float timer;
 	bool renderInventory = false;
