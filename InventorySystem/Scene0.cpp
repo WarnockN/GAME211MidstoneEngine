@@ -65,7 +65,7 @@ void Scene0::Update(const float time) {
 			std::cout << "hit" << std::endl;
 
 			inventory->addItem(food[j]);
-			
+			food[j]->Destroy(food[j]);
 	
 			//int a = 0;
 			//if (a <= (inventory->cap)) {

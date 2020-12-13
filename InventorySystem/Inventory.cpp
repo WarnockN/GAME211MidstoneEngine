@@ -14,12 +14,12 @@ void Inventory::addItem(Item* item) {
 	int a = 0;
 	if (a <= (cap)) {
 		items[a] = item;
-		items[a]->Destroy(items[a]);
+	
 		a++;
 		float b = 0.0f;
 
 		Vec3 tempPos(0.0, 150.0, 0.0);
-		items[a]->setPos(tempPos);
+		//items[a]->setPos(tempPos);
 	}
 
 }
