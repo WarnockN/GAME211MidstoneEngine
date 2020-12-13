@@ -47,8 +47,8 @@ void Player::PollEvents() {
 			mouseIsAt = Vec3(float(event.button.x), float(event.button.y), 0.0f);
 			std::cout << "mouse location X: " << mouseIsAt.x << " Y: " << mouseIsAt.y << std::endl;
 		}
-		else if (mouseIsAt.x > 155 && mouseIsAt.x < 250 &&
-			mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
+		else if (mouseIsAt.x > 155 && mouseIsAt.x < 250 && 
+				 mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked item 1" << std::endl;
 			}
@@ -56,8 +56,8 @@ void Player::PollEvents() {
 				std::cout << "right clicked item 1" << std::endl;
 			}
 		}
-		else if (mouseIsAt.x > 280 && mouseIsAt.x < 375 &&
-			mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
+		else if (mouseIsAt.x > 280 && mouseIsAt.x < 375 && 
+				 mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked item 2" << std::endl;
 			}
@@ -65,8 +65,8 @@ void Player::PollEvents() {
 				std::cout << "right clicked item 2" << std::endl;
 			}
 		}
-		else if (mouseIsAt.x > 400 && mouseIsAt.x < 495 &&
-			mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
+		else if (mouseIsAt.x > 400 && mouseIsAt.x < 495 && 
+				 mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked item 3" << std::endl;
 			}
