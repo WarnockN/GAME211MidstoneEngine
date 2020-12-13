@@ -15,7 +15,7 @@ private:
 	Matrix4 projection;
 	Player* player;
 	ItemFood* food[2];
-	
+	Item* item[3];
 	Inventory* inventory;
 
 	SDL_Surface* playerImage;

@@ -4,10 +4,12 @@
 #include "Matrix.h"
 #include <SDL.h>
 #include "SDL_image.h"
+#include <iostream>
 class Inventory {
 private:
 	int numOfItems;
 	SDL_Surface* inventoryImage;
+	SDL_Surface* itemImage;
 	SDL_Surface* foodImage;
 	SDL_Surface* weaponImage;
 	void initialize(const int from);

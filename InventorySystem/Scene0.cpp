@@ -5,7 +5,7 @@
 #include "Collider.h"
 #include "Inventory.h"
 using namespace std;
-Scene0::Scene0(SDL_Window* sdlWindow_):player(0), food(), foodImage(0), inventory(0), playerImage(0), timer(0), weaponImage(0) {
+Scene0::Scene0(SDL_Window* sdlWindow_):player(0), food(), foodImage(0), inventory(0), playerImage(0), timer(0), weaponImage(0), item() {
 	window = sdlWindow_;
 }
 Scene0::~Scene0(){}
@@ -24,6 +24,7 @@ bool Scene0::OnCreate() {
 	//creates food items
 	food[0] = new ItemFood(Vec3(150.0, 200.0, 0.0), 1.0f, 1);
 	food[1] = new ItemFood(Vec3(200.0, 100.0, 0.0), 1.0f, 1);
+
 	foodImage = IMG_Load("gingy.png");
 	if (foodImage == nullptr) cout << "food image lost" << endl;
 
@@ -60,6 +61,9 @@ void Scene0::Update(const float time) {
 		if (Collider::SphereSphereCollision(*player, *food[j])) {
 			std::cout << "item collected" << std::endl;
 
+			item[j]->setPos(food[j]->getPos());
+
+			std::cout << item[j]->getPos() << std::endl;
 			inventory->addItem(food[j]);
 			food[j]->Destroy(food[j]);
 	

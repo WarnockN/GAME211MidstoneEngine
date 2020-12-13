@@ -1,6 +1,7 @@
 #ifndef PHYSICSOBJECT_H
 #define PHYSICSOBJECT_H
 #include "Vector.h"
+#include <SDL.h>
 using namespace MATH;
 class PhysicsObject {
 	friend class Collider;
