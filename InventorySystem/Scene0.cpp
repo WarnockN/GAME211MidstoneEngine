@@ -58,7 +58,7 @@ void Scene0::HandleEvents(const SDL_Event& event) {
 void Scene0::Update(const float time) {
 	for (int j = 0; j < 2; j++) {
 		if (Collider::SphereSphereCollision(*player, *food[j])) {
-			std::cout << "hit" << std::endl;
+			std::cout << "item collected" << std::endl;
 
 			inventory->addItem(food[j]);
 			food[j]->Destroy(food[j]);

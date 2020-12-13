@@ -44,7 +44,7 @@ void Player::PollEvents() {
 			}
 		}
 		else if (event.type == SDL_MOUSEMOTION && openInventory == true) {
-			mouseIsAt = Vec3(event.button.x, event.button.y, 0);
+			mouseIsAt = Vec3(float(event.button.x), float(event.button.y), 0.0f);
 			std::cout << "mouse location X: " << mouseIsAt.x << " Y: " << mouseIsAt.y << std::endl;
 		}
 		else if (mouseIsAt.x > 0 && mouseIsAt.x < 400 && mouseIsAt.y > 0 && mouseIsAt.y < 200 && openInventory == true) {
