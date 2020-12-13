@@ -12,10 +12,10 @@ private:
 public:
 	const int cap = 3;
 	Item* items[3];
-	Item** itemArr;
+
 	Inventory();
 	~Inventory();
-	void addItem(const Item& item); //constant item refferrence
+	void addItem(Item* item); //constant item refferrence
 	void removeItem(int index); //removes an item from a specific index
 };
 #endif

@@ -64,15 +64,15 @@ void Scene0::Update(const float time) {
 		if (Collider::SphereSphereCollision(*player, *food[j])) {
 			std::cout << "hit" << std::endl;
 
-
+			inventory->addItem(food[j]);
 			
 	
-			int a = 0;
-			if (a <= (inventory->cap)) {
-				inventory->items[a] = food[j];
-				inventory->items[a]->Destroy(inventory->items[a]);
-				a++;
-			}
+			//int a = 0;
+			//if (a <= (inventory->cap)) {
+			//	inventory->items[a] = food[j];
+			//	inventory->items[a]->Destroy(inventory->items[a]);
+			//	a++;
+			//}
 			
 
 		
@@ -138,7 +138,16 @@ void Scene0::Render() {
 				SDL_BlitSurface(inventoryImage, nullptr, screenSurface, &images[i]);
 			
 		}
+		for (int i = 1; i < 4; i++) {
+			//renders the items in the inventory
+			Vec3 ScreenPos = projection * Vec3(30.0, 200.0, 0.0);
+			images[i].x = (int)ScreenPos.x;
+			images[i].y = (int)ScreenPos.y;
+			images[i].w = inventoryImage->w;
+			images[i].h = inventoryImage->h;
+			SDL_BlitSurface(inventoryImage, nullptr, screenSurface, &images[i]);
 
+		}
 	}
 	SDL_UpdateWindowSurface(window);
 }
