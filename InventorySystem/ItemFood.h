@@ -4,7 +4,7 @@
 class ItemFood : public Item {
 public:
 	ItemFood();
-	ItemFood(Vec3 pos_, float radius_);
+	ItemFood(Vec3 pos_, float radius_,int itemType_);
 	~ItemFood();
 };
 #endif

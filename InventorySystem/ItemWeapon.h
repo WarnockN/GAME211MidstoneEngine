@@ -4,7 +4,7 @@
 class ItemWeapon : public Item {
 public:
 	ItemWeapon();
-	ItemWeapon(Vec3 pos_, float radius_);
+	ItemWeapon(Vec3 pos_, float radius_, int itemType_);
 	~ItemWeapon();
 };
 #endif

@@ -18,6 +18,7 @@ public:
 	Inventory();
 	~Inventory();
 	void addItem(Item* item); //constant item refferrence
+	void placeItem(Item* item);
 	void removeItem(int index, Item* item); //removes an item from a specific index
 	void render(Matrix4& projection, SDL_Window* window);
 };

@@ -21,9 +21,19 @@ void Inventory::addItem(Item* item) {
 		//items[a]->setPos(tempPos);
 	}
 }
+void Inventory::placeItem(Item* item)
+{
+	float xPos = 0.0f;
+	item->setPos(Vec3(0.0f, 0.0f, 0.0f));
+
+}
 void Inventory::removeItem(int i, Item* item) {
 	items[i] = nullptr;
+
+
+
 	item->Destroy(item);
+
 }
 void Inventory::initialize(const int from) {
 	for (size_t i = from; i < cap; i++) { items[i] = nullptr; }

@@ -22,8 +22,8 @@ bool Scene0::OnCreate() {
 	inventory = new Inventory();
 
 	//creates food items
-	food[0] = new ItemFood(Vec3(150.0, 200.0, 0.0), 1.0f);
-	food[1] = new ItemFood(Vec3(200.0, 100.0, 0.0), 1.0f);
+	food[0] = new ItemFood(Vec3(150.0, 200.0, 0.0), 1.0f, 1);
+	food[1] = new ItemFood(Vec3(200.0, 100.0, 0.0), 1.0f, 1);
 	foodImage = IMG_Load("gingy.png");
 	if (foodImage == nullptr) cout << "food image lost" << endl;
 

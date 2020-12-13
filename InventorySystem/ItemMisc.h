@@ -4,7 +4,8 @@
 class ItemMisc : public Item {
 public:
 	ItemMisc();
-	ItemMisc(Vec3 pos_, float radius_);
+	ItemMisc(Vec3 pos_, float radius_,int itemType_);
 	~ItemMisc();
+
 };
 #endif
