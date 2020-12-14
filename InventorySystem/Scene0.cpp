@@ -25,12 +25,13 @@ bool Scene0::OnCreate() {
 	food[0] = new ItemFood(Vec3(150.0, 200.0, 0.0), 1.0f, 1);
 	food[1] = new ItemFood(Vec3(200.0, 100.0, 0.0), 1.0f, 1);
 
-	foodImage = IMG_Load("gingy.png");
+	foodImage = IMG_Load("bred.png");
 	if (foodImage == nullptr) cout << "food image lost" << endl;
 
-
-
-
+	//creates weapon
+	weapon[0] = new ItemWeapon(Vec3(150.0, 100.0, 0.0), 1.0f, 2);
+	weaponImage = IMG_Load("sword.png");
+	if (weaponImage == nullptr) cout << "weapon image lost" << endl;
 
 	//creates player
 	player = new Player(Vec3(100.0, 200.0, 0.0), Vec3(0.0, 0.0, 0.0), Vec3(0.0, 0.0, 0.0), 15.0f);
@@ -59,33 +60,21 @@ void Scene0::HandleEvents(const SDL_Event& event) {
 void Scene0::Update(const float time) {
 	for (int j = 0; j < 2; j++) {
 		if (Collider::SphereSphereCollision(*player, *food[j])) {
+
 			std::cout << "item collected" << std::endl;
-
-			item[j]->setPos(food[j]->getPos());
-
-			std::cout << item[j]->getPos() << std::endl;
-			inventory->addItem(food[j]);
+			Vec3 tempVec = Vec3(food[j]->pos.x, food[j]->pos.y, food[j]->pos.z);
+			inventory->addItem(food[j], tempVec);
 			food[j]->Destroy(food[j]);
-	
-			//int a = 0;
-			//if (a <= (inventory->cap)) {
-			//	inventory->items[a] = food[j];
-			//	inventory->items[a]->Destroy(inventory->items[a]);
-			//	a++;
-			//}
-			
-
-		
-
-			//add the item to this array vvvvv
-			
-			//array <Item*>itemArray{};
 
 		};
+		if (Collider::SphereSphereCollision(*player, *weapon[j])) {
 
-		//std::cout << inventory->itemArr.size() << std::endl;
-		//remove item from screen 
-	
+			std::cout << "item collected" << std::endl;
+			Vec3 tempVec = Vec3(weapon[j]->pos.x, weapon[j]->pos.y, food[j]->pos.z);
+			inventory->addItem(weapon[j], tempVec);
+			weapon[j]->Destroy(weapon[j]);
+
+		};
 	};
 
 
@@ -125,6 +114,14 @@ void Scene0::Render() {
 				images[i].h = foodImage->h;
 				SDL_BlitSurface(foodImage, nullptr, screenSurface, &images[i]);
 			}
+		}
+		for (int i = 0; i < 1; i++) {
+			Vec3 ScreenPos = projection * weapon[i]->getPos();
+			images[i].x = (int)ScreenPos.x;
+			images[i].y = (int)ScreenPos.y;
+			images[i].w = weaponImage->w;
+			images[i].h = weaponImage->h;
+			SDL_BlitSurface(weaponImage, nullptr, screenSurface, &images[i]);
 		}
 	}
 	if (renderInventory == true) {

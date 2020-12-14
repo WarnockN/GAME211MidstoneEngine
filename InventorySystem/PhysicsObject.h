@@ -5,6 +5,8 @@
 using namespace MATH;
 class PhysicsObject {
 	friend class Collider;
+	friend class Scene0;
+	friend class Inventory;
 protected:
 	Vec3 pos, vel, accel;
 public:

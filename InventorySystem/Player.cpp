@@ -51,6 +51,7 @@ void Player::PollEvents() {
 				 mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked item 1" << std::endl;
+
 			}
 			if (event.button.button == SDL_BUTTON_RIGHT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "right clicked item 1" << std::endl;
@@ -60,6 +61,7 @@ void Player::PollEvents() {
 				 mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked item 2" << std::endl;
+				
 			}
 			if (event.button.button == SDL_BUTTON_RIGHT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "right clicked item 2" << std::endl;
