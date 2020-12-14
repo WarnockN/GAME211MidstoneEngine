@@ -60,7 +60,7 @@ void Player::PollEvents() {
 				std::cout << "right clicked item 1" << std::endl;
 				if (inventory->numOfItems >= 1) {
 					//drop
-					inventory->removeItem(inventory->items[0]->itemType, inventory->items[0]);
+					inventory->removeItem(1, inventory->items[0]);
 				}
 			}
 		}
@@ -77,7 +77,7 @@ void Player::PollEvents() {
 				std::cout << "right clicked item 2" << std::endl;
 				if (inventory->numOfItems >= 2) {
 					//drop
-					inventory->removeItem(inventory->items[1]->itemType, inventory->items[1]);
+					inventory->removeItem(2, inventory->items[1]);
 				}
 			}
 		}
@@ -93,7 +93,7 @@ void Player::PollEvents() {
 				std::cout << "right clicked item 3" << std::endl;
 				if (inventory->numOfItems >= 3) {
 					//drop
-					inventory->removeItem(inventory->items[2]->itemType, inventory->items[2]);
+					inventory->removeItem(3, inventory->items[2]);
 				}
 			}
 		}

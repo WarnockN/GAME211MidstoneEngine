@@ -49,7 +49,19 @@ void Inventory::placeItem()
 
 }
 void Inventory::removeItem(int i, Item* item) {
-	numOfItems--;
+	if (i == 1) {
+		itemImage[0] = itemImage[1];
+		itemImage[1] = itemImage[2];
+		numOfItems--;
+	}
+	else if (i == 2) {
+		itemImage[1] = itemImage[2];
+		numOfItems--;
+	}
+	else if (i == 3) {
+		numOfItems--;
+	}
+
 	//items[i] = nullptr;
 
 	//item->Destroy(item);
