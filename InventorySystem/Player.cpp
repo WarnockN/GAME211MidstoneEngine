@@ -1,5 +1,5 @@
 #include "Player.h"
-#include "Inventory.h"
+
 Player::Player():mouseIsAt(0.0f, 0.0f, 0.0f), inventory() {}
 Player::~Player(){}
 Player::Player(Vec3 pos_, Vec3 accel_, Vec3 vel_, float radius_):PhysicsObject(pos_, vel_, accel_, radius_) {
@@ -51,29 +51,50 @@ void Player::PollEvents() {
 				 mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked item 1" << std::endl;
+				if (inventory->numOfItems >=1) {
+					//equip
 
+				}
 			}
 			if (event.button.button == SDL_BUTTON_RIGHT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "right clicked item 1" << std::endl;
+				if (inventory->numOfItems >= 1) {
+					//drop
+					inventory->removeItem(inventory->items[0]->itemType, inventory->items[0]);
+				}
 			}
 		}
 		else if (mouseIsAt.x > 280 && mouseIsAt.x < 375 && 
 				 mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked item 2" << std::endl;
-				
+				if (inventory->numOfItems >= 2) {
+					//equip
+					//do equip thing lmaooooo
+				}
 			}
 			if (event.button.button == SDL_BUTTON_RIGHT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "right clicked item 2" << std::endl;
+				if (inventory->numOfItems >= 2) {
+					//drop
+					inventory->removeItem(inventory->items[1]->itemType, inventory->items[1]);
+				}
 			}
 		}
 		else if (mouseIsAt.x > 400 && mouseIsAt.x < 495 && 
 				 mouseIsAt.y > 133 && mouseIsAt.y < 225 && openInventory == true) {
 			if (event.button.button == SDL_BUTTON_LEFT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "left clicked item 3" << std::endl;
+				if (inventory->numOfItems >= 3) {
+					//equip
+				}
 			}
 			if (event.button.button == SDL_BUTTON_RIGHT && event.type == SDL_MOUSEBUTTONDOWN) {
 				std::cout << "right clicked item 3" << std::endl;
+				if (inventory->numOfItems >= 3) {
+					//drop
+					inventory->removeItem(inventory->items[2]->itemType, inventory->items[2]);
+				}
 			}
 		}
 	}
@@ -86,4 +107,10 @@ bool Player::ShowInventory()
 		return false;
 	//show inventory ui
 	//redisplay collected items in thier respective locations
+}
+
+void Player::InventoryInit(Inventory* inv)
+{
+
+	inventory = inv;
 }

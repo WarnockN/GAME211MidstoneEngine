@@ -19,7 +19,7 @@ bool Scene0::OnCreate() {
 	projection = ndc * ortho;
 
 	//creates inventory
-	inventory = new Inventory();
+	
 
 	//creates food items
 	food[0] = new ItemFood(Vec3(150.0, 200.0, 0.0), 1.0f, 1);
@@ -37,7 +37,9 @@ bool Scene0::OnCreate() {
 	player = new Player(Vec3(100.0, 200.0, 0.0), Vec3(0.0, 0.0, 0.0), Vec3(0.0, 0.0, 0.0), 15.0f);
 	playerImage = IMG_Load("fortnite.png");
 	if (playerImage == nullptr) cout << "player image lost" << endl;
-
+	inventory = new Inventory();
+	player->InventoryInit(inventory);
+	
 	return true;
 }
 void Scene0::OnDestroy() {

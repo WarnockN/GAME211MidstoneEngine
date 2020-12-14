@@ -31,11 +31,11 @@ void Inventory::addItem(Item* item,Vec3 pos) {
 		items[a] = item;
 	
 		a++;
-		placeItem(item);
+		placeItem();
 		//items[a]->setPos(tempPos);
 	}
 }
-void Inventory::placeItem(Item* item)
+void Inventory::placeItem()
 {
 
 		iconPos[0].x = 65.0f;
@@ -49,10 +49,10 @@ void Inventory::placeItem(Item* item)
 
 }
 void Inventory::removeItem(int i, Item* item) {
-	items[i] = nullptr;
+	numOfItems--;
+	//items[i] = nullptr;
 
-
-	item->Destroy(item);
+	//item->Destroy(item);
 
 }
 void Inventory::initialize(const int from) {
