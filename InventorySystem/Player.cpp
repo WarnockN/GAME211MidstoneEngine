@@ -53,7 +53,7 @@ void Player::PollEvents() {
 				std::cout << "left clicked item 1" << std::endl;
 				if (inventory->numOfItems >=1) {
 					//equip
-
+					//done
 				}
 			}
 			if (event.button.button == SDL_BUTTON_RIGHT && event.type == SDL_MOUSEBUTTONDOWN) {
@@ -70,7 +70,7 @@ void Player::PollEvents() {
 				std::cout << "left clicked item 2" << std::endl;
 				if (inventory->numOfItems >= 2) {
 					//equip
-					//do equip thing lmaooooo
+					
 				}
 			}
 			if (event.button.button == SDL_BUTTON_RIGHT && event.type == SDL_MOUSEBUTTONDOWN) {
