@@ -22,24 +22,25 @@ bool Scene0::OnCreate() {
 	
 
 	//creates food items
-	food[0] = new ItemFood(Vec3(150.0, 200.0, 0.0), 1.0f, 1);
-	food[1] = new ItemFood(Vec3(200.0, 100.0, 0.0), 1.0f, 1);
+	food[0] = new ItemFood(Vec3(150.0, 70.0, 0.0), 1.0f, 1);
+	food[1] = new ItemFood(Vec3(250.0, 70.0, 0.0), 1.0f, 1);
 
 	foodImage = IMG_Load("bred.png");
 	if (foodImage == nullptr) cout << "food image lost" << endl;
 
 	//creates weapon
-	weapon[0] = new ItemWeapon(Vec3(150.0, 100.0, 0.0), 1.0f, 2);
+	weapon[0] = new ItemWeapon(Vec3(200.0, 70.0, 0.0), 1.0f, 2);
 	weaponImage = IMG_Load("sword.png");
 	if (weaponImage == nullptr) cout << "weapon image lost" << endl;
 
 	//creates player
-	player = new Player(Vec3(100.0, 200.0, 0.0), Vec3(0.0, 0.0, 0.0), Vec3(0.0, 0.0, 0.0), 15.0f);
-	playerImage = IMG_Load("fortnite.png");
+	player = new Player(Vec3(10.0, 70.0, 0.0), Vec3(0.0, 0.0, 0.0), Vec3(0.0, 0.0, 0.0), 15.0f);
+	playerImage = IMG_Load("character.png");
 	if (playerImage == nullptr) cout << "player image lost" << endl;
 	inventory = new Inventory();
 	player->InventoryInit(inventory);
 	
+	backgroundImage = IMG_Load("background.jpg");
 	return true;
 }
 void Scene0::OnDestroy() {
@@ -92,10 +93,17 @@ void Scene0::Update(const float time) {
 };
 
 void Scene0::Render() {
-	SDL_Rect images[4];
+	SDL_Rect images[5];
 	SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
 	SDL_FillRect(screenSurface, nullptr, SDL_MapRGB(screenSurface->format, 0, 0, 0));
-	
+
+		Vec3 ScreenPos = projection * Vec3(1.0f,200.0f,0.0f);
+		images[4].x = (int)ScreenPos.x;
+		images[4].y = (int)ScreenPos.y;
+		images[4].w = backgroundImage->w;
+		images[4].h = backgroundImage->h;
+		SDL_BlitSurface(backgroundImage, nullptr, screenSurface, &images[4]);
+		
 	//for 
 	//inventory->renderItems(true, a);
 	if (renderInventory == false) {
@@ -129,5 +137,5 @@ void Scene0::Render() {
 	if (renderInventory == true) {
 		inventory->render(projection, window);
 	}
-	SDL_UpdateWindowSurface(window);
+SDL_UpdateWindowSurface(window);
 }

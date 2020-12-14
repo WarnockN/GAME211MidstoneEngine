@@ -20,6 +20,7 @@ private:
 	Item* item[3];
 	Inventory* inventory;
 
+	SDL_Surface* backgroundImage;
 	SDL_Surface* playerImage;
 	SDL_Surface* foodImage;
 	SDL_Surface* weaponImage;

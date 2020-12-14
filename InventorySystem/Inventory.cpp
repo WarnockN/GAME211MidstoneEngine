@@ -37,15 +37,17 @@ void Inventory::addItem(Item* item,Vec3 pos) {
 }
 void Inventory::placeItem()
 {
-
+	float offset = 50.0f;
+	float slotX = 65.0f;
+	float slotY = 145.0f;
 		iconPos[0].x = 65.0f;
-		iconPos[0].y = 145.0f;
+		iconPos[0].y = slotY;
 
-		iconPos[1].x = 115.0f;
-		iconPos[1].y = 145.0f;
+		iconPos[1].x = slotX + offset;
+		iconPos[1].y = slotY;
 
-		iconPos[2].x = 165.0f;
-		iconPos[2].y = 145.0f;
+		iconPos[2].x = slotX + offset*2;
+		iconPos[2].y = slotY;
 
 }
 void Inventory::removeItem(int i, Item* item) {
